@@ -2,8 +2,6 @@
 
 This repository contains five question deliverables: ELF reverse-engineering (C), x86-64 assembly (NASM), a Python C extension, a multithreaded producer–consumer simulation, and a TCP client–server library reservation system.
 
-**Reports (Markdown → PDF):** [`PROJECT_REPORT.md`](PROJECT_REPORT.md) (all questions), [`Q1/ANALYSIS_REPORT.md`](Q1/ANALYSIS_REPORT.md) (ELF deep-dive). Each file begins with a `pandoc` example for PDF export.
-
 **Requirements:** Linux x86-64, **GCC**, **Python 3** with development headers, **pthread**. Question 2 additionally requires **NASM**.
 
 ---

@@ -31,6 +31,8 @@ static const char *const book_titles[NUM_BOOKS] = {
 	"Embedded Linux"
 };
 
+static int book_owner[NUM_BOOKS];
+
 static char active_users[MAX_CLIENTS][32];
 static int active_count;
 
@@ -82,12 +84,6 @@ send_line(int fd, const char *s)
 	return write(fd, buf, n + 1);
 }
 
-/*
- * Read one LF-terminated line (byte-at-a-time). TCP may split one logical line
- * across many read() returns; a single large read() may contain multiple lines.
- * Matches library_client line framing. On EOF before '\\n', returns 0 with buf
- * NUL-terminated (often empty).
- */
 static ssize_t
 read_line_sock(int fd, char *buf, size_t cap)
 {

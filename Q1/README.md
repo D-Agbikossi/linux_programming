@@ -38,6 +38,8 @@ computed_sum=60
 ```bash
 readelf -h program
 readelf -S program
+readelf -l program
+nm program_unstripped
 objdump -d program_unstripped
 strace ./program
 gdb ./program_unstripped

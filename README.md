@@ -2,6 +2,7 @@
 
 This repository contains five question deliverables: ELF reverse-engineering (C), x86-64 assembly (NASM), a Python C extension, a multithreaded producer–consumer simulation, and a TCP client–server library reservation system.
 
+**Reports (Markdown → PDF):** [`PROJECT_REPORT.md`](PROJECT_REPORT.md) (all questions), [`Q1/ANALYSIS_REPORT.md`](Q1/ANALYSIS_REPORT.md) (ELF deep-dive). Each file begins with a `pandoc` example for PDF export.
 
 **Requirements:** Linux x86-64, **GCC**, **Python 3** with development headers, **pthread**. Question 2 additionally requires **NASM**.
 
@@ -9,13 +10,13 @@ This repository contains five question deliverables: ELF reverse-engineering (C)
 
 ## Quick reference
 
-| Question | Primary artifacts                                    | Build toolchain               |
-|----------|------------------------------------------------------|------------------------|
+| Question | Primary artifacts                                    | Build toolchain                |
+|----------|------------------------------------------------------|--------------------------------|
 | Q1       | `program.c`, stripped `program`, analysis report     | `gcc`, `strip`                 |
-| Q2       | `temperature.asm`, `temperature_data.txt`            | `nasm`, `gcc`                   |
+| Q2       | `temperature.asm`, `temperature_data.txt`            | `nasm`, `gcc`                  |
 | Q3       | `vibrationmodule.c`, `setup.py`, `test_vibration.py` | `gcc`, `python3`, `setuptools` |
-| Q4       | `baggage_handling.c`                                 | `gcc` + `-pthread`              |
-| Q5       | `library_server.c`, `library_client.c`               | `gcc` + `-pthread`              |
+| Q4       | `baggage_handling.c`                                 | `gcc` + `-pthread`             |
+| Q5       | `library_server.c`, `library_client.c`               | `gcc` + `-pthread`             |
 
 Each subdirectory has its own **README** with compile commands and expected behavior.
 
@@ -288,7 +289,7 @@ Stop the server with `Ctrl+C` or `pkill library_server` when finished.
 ## Troubleshooting
 
 | Issue                              | Suggestion                                        |
-|------------------------------------|--------------------------------------------------|
+|------------------------------------|---------------------------------------------------------------|
 | Q2: `nasm: command not found`      | Install NASM (`sudo apt install nasm`).                        |
 | Q3: `Python.h: No such file`       | Install Python dev package (e.g. `sudo apt install python3-dev`).         |
 | Q5: `bind: Address already in use` | Another process uses port 9090; stop it or change `PORT` in both sources. |
